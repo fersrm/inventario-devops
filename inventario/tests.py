@@ -59,3 +59,9 @@ class EquipoApiTests(APITestCase):
         response = self.client.post(reverse("equipo-list"), self.payload, format="json")
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn("codigo_inventario", response.data)
+
+
+    def test_version(self):
+        res = self.client.get('/api/version/')
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(res.data['version'], '1.1.0')
