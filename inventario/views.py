@@ -16,3 +16,7 @@ class EquipoViewSet(viewsets.ModelViewSet):
 @api_view(["GET"])
 def health_check(request):
     return Response({"status": "ok"}, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def version(request):
+    return Response({'version': '1.1.0', 'service': 'inventario-api'})
