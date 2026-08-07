@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Infraestructura Inventario API - repositorio de imágenes ECR
+
+Resources:
+  TaskflowRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: inventario-api
+      ImageScanningConfiguration:
+        ScanOnPush: true
+
+Outputs:
+  RepositoryUri:
+    Description: URI del repositorio ECR
+    Value: !GetAtt TaskflowRepo.RepositoryUri
