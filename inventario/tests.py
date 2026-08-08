@@ -64,4 +64,4 @@ class EquipoApiTests(APITestCase):
     def test_version(self):
         res = self.client.get('/api/version/')
         self.assertEqual(res.status_code, 200)
-        self.assertEqual(res.data['version'], '1.1.0')
+        self.assertEqual(res.data['version'], '1.2.0')
