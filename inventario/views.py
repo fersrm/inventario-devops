@@ -19,4 +19,4 @@ def health_check(request):
 
 @api_view(['GET'])
 def version(request):
-    return Response({'version': '1.1.0', 'service': 'inventario-api'})
+    return Response({'version': '1.2.0', 'service': 'inventario-api'})
